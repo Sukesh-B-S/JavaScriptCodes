@@ -1,0 +1,28 @@
+//  Ask the user to enter the elements seperated by commas
+const Input = prompt("Enter elements separated by ',': ");
+
+// seperate given elements based on commas
+const eachElement = Input.split(",");
+
+// Convert each elements to numbers
+const num = eachElement.map(Number);
+
+// Check for each elements are converted to number or not
+const checkAllNumbers = num.every(eachElement => !isNaN(eachElement));
+
+if (checkAllNumbers) {
+    
+  //  Sort the number is increasing order and stored in Num
+  num.sort((a, b) => a - b);
+  
+  //once sorted in ascending order then reverse it to get descending form
+num.reverse();
+ 
+ // Display the sorted array
+  console.log("Descending order of the elements :", num);
+} 
+//if not all elements converted into number
+else {
+  console.log("User input is not in prefered manner ");
+}
+
